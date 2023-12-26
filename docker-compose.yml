@@ -10,7 +10,10 @@ services:
       - /Users/mehdiraash/Chain/:/Users/mehdiraash/Chain
     extra_hosts:
       - 'host.docker.internal:host-gateway'
-
+    ports:
+      - "9944:9944"
+      - "9933:9933"
+      - "30333:30333"
     command:
       - --chain
       - testnet
@@ -32,8 +35,7 @@ services:
       - --rpc-methods
       - unsafe
       - --force-authoring
-      - --port 
-      - '30000' 
+
 
   postgres:
     image: postgres:12-alpine
