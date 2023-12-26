@@ -7,7 +7,7 @@ services:
     user: root
     restart: unless-stopped
     volumes:
-      - /Users/mehdiraash/Chain/:/Users/mehdiraash/Chain
+      - /Users/mehdiraash/Testnet/:/Users/mehdiraash/Chain
     extra_hosts:
       - 'host.docker.internal:host-gateway'
     ports:
@@ -18,7 +18,7 @@ services:
       - --chain
       - testnet
       - --base-path
-      - /Users/mehdiraash/Chain
+      - /Users/mehdiraash/Testnet
       - --rpc-external
       - --rpc-cors
       - all
@@ -35,6 +35,8 @@ services:
       - --rpc-methods
       - unsafe
       - --force-authoring
+      - --pruning
+      - archive
 
 
   postgres:
